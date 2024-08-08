@@ -1,0 +1,47 @@
+---
+title: "r-exploring"
+author: "Kimmy Wong"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+---
+title: "r-exploring"
+author: "Kimmy Wong"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+## Load libraries
+```{r}
+library(GGally)
+library(skimr)
+library(tidyverse)
+library(palmerpenguins)
+
+# look at it ----
+
+view(penguins)
+names(penguins)
+
+# check dimensions ----
+dim(penguins)
+
+# get summary ----
+summary(penguins)
+
+skim(penguins)
+
+# print first 6 rows ----
+head(penguins)
+
+# print last 6 rows ----
+tail(penguins)
+
+# make a pairplot
+ggpairs(penguins)
+
+# make pairsplot w/ species by color and select columns ----
+GGally:ggpairs(penguins, column = 3:6, ggplot2::aes(colour = species))
+```
